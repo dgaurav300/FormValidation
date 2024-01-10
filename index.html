@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="sweetalert2@11.js"></script>
+</head>
+<body>
+    <form onsubmit="return formValidate()"  name="form1">
+       Name: <input type="text" name="name"/> <br><br>
+       Email: <input type="email" name="email"/> <br><br>
+
+       <input type="submit" value="Submit">
+
+    </form>
+
+    <script>
+        function formValidate(){
+           let name=document.forms["form1"]["name"];
+           let email=document.forms["form1"]["email"];
+
+           if(name.value=="")
+           {
+            name.style.border="5px red solid";
+            name.setAttribute("placeholder","PLease Enter Your Name");
+
+            return false;
+           }
+           else{
+            name.style.border="none";
+           }
+           if(email.value=="")
+           {
+            email.style.border="5px red solid";
+            email.setAttribute("placeholder","PLease Enter Your email");
+
+            return false;
+           }
+           else
+           {
+            email.style.border="none";
+           }
+
+           
+           Swal.fire({
+  title: "Good job!",
+  text: "You Successfully Submitted",
+  icon: "success"
+});
+
+return false;
+           
+        }
+    </script>
+</body>
+</html>
